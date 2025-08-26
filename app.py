@@ -7,25 +7,25 @@ st.title("Datos de anuncios de coches")
      
 
     
-     car_data = pd.read_csv('vehicles_us.csv') # leer los datos
-     hist_button = st.button('Construir histograma') # crear un botón
+car_data = pd.read_csv('vehicles_us.csv') 
+hist_button = st.button('Construir histograma') 
      
-     if hist_button: 
+if hist_button: 
          st.write('Creación de un histograma para el conjunto de datos de anuncios de venta de coches')
          
         
-         fig = px.histogram(car_data, x="odometer")
+fig = px.histogram(car_data, x="odometer")
      
          
-         st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, use_container_width=True)
      
 st.subheader("📊 Datos generados")
 st.dataframe(df.head())
 
-car_data = pd.read_csv('vehicles_us.csv') # leer los datos
-fig = px.scatter(car_data, x="odometer", y="price") # crear un gráfico de dispersión
+car_data = pd.read_csv('vehicles_us.csv') 
+fig = px.scatter(car_data, x="odometer", y="price") 
 fig.show() 
 
-car_data = pd.read_csv('vehicles_us.csv') # leer los datos
-fig = px.scatter(car_data, x="odometer", y="price") # crear un gráfico de dispersión
-fig.show() #
+car_data = pd.read_csv('vehicles_us.csv') 
+fig = px.scatter(car_data, x="odometer", y="price") 
+fig.show() 
