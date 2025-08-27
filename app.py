@@ -23,14 +23,8 @@ car_data = pd.read_csv('vehicles_us.csv')
 fig = px.scatter(car_data, x="odometer", y="price") 
 fig.show() 
 
-fig = px.scatter(car_data, x="odometer", y="price") 
-fig.show()
+data = car_data = pd.read_csv('vehicles_us.csv') 
 
-data = {
-    "manufacturer": ["ford", "ford", "toyota", "toyota", "bmw", "bmw", "honda", "honda"],
-    "type": ["suv", "truck", "sedan", "suv", "sedan", "coupe", "suv", "van"],
-    "count": [100, 80, 120, 200, 90, 50, 160, 70]
-}
 df = pd.DataFrame(data)
 
 st.title("Vehicle types by manufacturer")
