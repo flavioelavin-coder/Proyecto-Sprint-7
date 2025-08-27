@@ -23,9 +23,23 @@ car_data = pd.read_csv('vehicles_us.csv')
 fig = px.scatter(car_data, x="odometer", y="price") 
 fig.show() 
 
-car_data = pd.read_csv('vehicles_us.csv') 
-fig = px.scatter(car_data, x="odometer", y="price") 
-fig.show() 
+data = {
+    "manufacturer": ["ford", "ford", "toyota", "toyota", "bmw", "bmw", "honda", "honda"],
+    "type": ["suv", "truck", "sedan", "suv", "sedan", "coupe", "suv", "van"],
+    "count": [100, 80, 120, 200, 90, 50, 160, 70]
+}
+df = pd.DataFrame(data)
 
-fig = px.scatter(car_data, x="odometer", y="price") 
-fig.show()
+st.title("Vehicle types by manufacturer")
+
+
+fig = px.histogram(
+    df,
+    x="manufacturer",
+    y="count",
+    color="type",
+    barmode="stack",   
+    title="Vehicle types by manufacturer"
+)
+
+st.plotly_chart(fig)
