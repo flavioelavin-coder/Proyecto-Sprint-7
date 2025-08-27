@@ -23,20 +23,21 @@ car_data = pd.read_csv('vehicles_us.csv')
 fig = px.scatter(car_data, x="odometer", y="price") 
 fig.show() 
 
-data = pd.read_csv('vehicles_us.csv') 
-
-df = pd.DataFrame(data)
-
 st.title("Vehicle types by manufacturer")
 
+car_data = pd.read_csv('vehicles_us.csv') 
 
+conteo = car_data.groupby(["model", "type"])["model_year"].nunique().reset_index()
+conteo = conteo.rename(columns={"model": "model_count"})
+
+# Crear histograma apilado
 fig = px.histogram(
-    df,
-    x="manufacturer",
-    y="count",
+    conteo,
+    x="model_year",
+    y="model_count",
     color="type",
-    barmode="stack",   
-    title="Vehicle types by manufacturer"
+    barmode="stack",
+    title="Número de modelos por tipo de vehículo y fabricante"
 )
 
-st.plotly_chart(fig)
+fig.show()
