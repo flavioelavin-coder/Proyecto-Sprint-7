@@ -22,7 +22,7 @@ st.dataframe(car_data.head())
 
 st.title("Vehicle types by manufacturer")
 
-car_data = pd.read_csv('../vehicles_us.csv') 
+car_data = pd.read_csv('vehicles_us.csv') 
 
 conteo = car_data.groupby(["model", "type"])["model_year"].nunique().reset_index()
 conteo = conteo.rename(columns={"model": "model_count"})
