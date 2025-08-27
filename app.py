@@ -13,9 +13,8 @@ hist_button = st.button('Construir histograma')
 if hist_button: 
          st.write('Creación de un histograma para el conjunto de datos de anuncios de venta de coches')
          fig = px.histogram(car_data, x="odometer")
-     
-    
-st.plotly_chart(fig, use_container_width=True)
+         st.plotly_chart(fig, use_container_width=True)
+         
      
 st.subheader("📊 Datos generados")
 st.dataframe(car_data.head())
