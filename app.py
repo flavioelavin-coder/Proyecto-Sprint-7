@@ -23,7 +23,7 @@ car_data = pd.read_csv('vehicles_us.csv')
 fig = px.scatter(car_data, x="odometer", y="price") 
 fig.show() 
 
-data = car_data = pd.read_csv('vehicles_us.csv') 
+data = pd.read_csv('vehicles_us.csv') 
 
 df = pd.DataFrame(data)
 
