@@ -19,13 +19,10 @@ if hist_button:
 st.subheader("📊 Datos generados")
 st.dataframe(car_data.head())
 
-car_data = pd.read_csv('vehicles_us.csv') 
-fig = px.scatter(car_data, x="odometer", y="price") 
-fig.show() 
 
 st.title("Vehicle types by manufacturer")
 
-car_data = pd.read_csv('vehicles_us.csv') 
+car_data = pd.read_csv('../vehicles_us.csv') 
 
 conteo = car_data.groupby(["model", "type"])["model_year"].nunique().reset_index()
 conteo = conteo.rename(columns={"model": "model_count"})
